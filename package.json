@@ -1,0 +1,35 @@
+{
+  "name": "react-hls",
+  "version": "0.0.0",
+  "description": "simple react component for playing hls/rtmp live stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mingxinstar/react-hls.git"
+  },
+  "keywords": [
+    "hls",
+    "rtmp",
+    "react"
+  ],
+  "author": "mingxin.huang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mingxinstar/react-hls/issues"
+  },
+  "homepage": "https://github.com/mingxinstar/react-hls#readme",
+  "dependencies": {
+    "hls.js": "^0.6.14",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
