@@ -1,10 +1,6 @@
 'use strict';
-var bourbon = require('bourbon').includePaths;
 
-const PUBLIC_DIR = __dirname + '/src'
-const ENV = process.env.NODE_ENV || 'develop';
-
-console.log('build ENV : ', ENV);
+const publicDir = __dirname + '/src'
 
 module.exports = {
     debug : true,
@@ -18,25 +14,25 @@ module.exports = {
         filename : '[name].bundle.js'
     },
     resolve : {
-        root : PUBLIC_DIR,
+        root : publicDir,
         extensions: ['', '.js', '.jsx'],
         alias : {
-            scripts : PUBLIC_DIR + '/scripts',
-            styles : PUBLIC_DIR + '/styles',
-            components : PUBLIC_DIR + '/scripts/components',
-            config : PUBLIC_DIR + '/scripts/config',
-            images : PUBLIC_DIR + '/styles/images'
+            scripts : publicDir + '/scripts',
+            styles : publicDir + '/styles',
+            components : publicDir + '/scripts/components',
+            config : publicDir + '/scripts/config',
+            images : publicDir + '/styles/images'
         }
     },
     module : {
-        preLoaders : [{
-            test : /\.js|jsx$/,
-            loader : 'eslint-loader',
-            configFile : '.eslintrc.js',
-            exclude : [
-                '/node_modules'
-            ]
-        }],
+        // preLoaders : [{
+        //     test : /\.js|jsx$/,
+        //     loader : 'eslint-loader',
+        //     configFile : '.eslintrc.js',
+        //     exclude : [
+        //         '/node_modules'
+        //     ]
+        // }],
         loaders : [{
             test : /\.css$/,
             loader : 'style-loader!css-loader'
@@ -50,7 +46,6 @@ module.exports = {
         }, {
             test : /\.eot|woff|woff2|ttf|svg$/,
             loader : 'file-loader',
-            // loader : 'url-loader!file-loader',
             exclude : /node_modules/
         }, {
             test : /\.jpg|png|gif$/,
@@ -58,6 +53,7 @@ module.exports = {
         }]
     },
     devServer : {
-        hot : true
+        hot : true,
+        contentBase : __dirname + '/dist'
     }
 }

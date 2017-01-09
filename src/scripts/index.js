@@ -1,8 +1,12 @@
-import React form 'react';
+'use strict';
+
+import React from 'react';
 import ReactDOM from 'react-dom';
+
+import Player from 'components/player';
 
 ReactDOM.render((
     <div>
-        <video></video>
+        <Player />
     </div>
 ), document.getElementById('container'));
