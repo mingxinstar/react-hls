@@ -2,6 +2,8 @@
 
 const publicDir = __dirname + '/src'
 
+console.log(__dirname + '/node_modules/hls.js/');
+
 module.exports = {
     debug : true,
     devtool : 'eval',
@@ -21,7 +23,8 @@ module.exports = {
             styles : publicDir + '/styles',
             components : publicDir + '/scripts/components',
             config : publicDir + '/scripts/config',
-            images : publicDir + '/styles/images'
+            images : publicDir + '/styles/images',
+            node_modules : publicDir + '/../node_modules'
         }
     },
     module : {

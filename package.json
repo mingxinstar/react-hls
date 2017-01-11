@@ -4,7 +4,7 @@
   "description": "simple react component for playing hls/rtmp live stream",
   "main": "index.js",
   "scripts": {
-    "start" : "webpack-dev-server",
+    "start": "webpack-dev-server --inline --hot --content-base dist/ --port 8000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,6 +34,12 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "babel-preset-stage-3": "^6.17.0",
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.9.0",
+    "node-sass": "^4.2.0",
+    "sass-loader": "^4.1.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   }
