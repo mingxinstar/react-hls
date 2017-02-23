@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --content-base dist/ --port 8000",
+    "build": "webpack",
+    "build-production" : "webpack --config webpack.production.config.js",
+    "build-stats" : "webpack --production --json > stats.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -35,6 +38,9 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-preset-stage-3": "^6.17.0",
     "css-loader": "^0.26.1",
+    "eslint": "^3.13.1",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-react": "^6.9.0",
     "file-loader": "^0.9.0",
     "node-sass": "^4.2.0",
     "sass-loader": "^4.1.1",

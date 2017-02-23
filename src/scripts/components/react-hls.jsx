@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import Hls from 'hls.js';
 
 class ReactHls extends React.Component {
@@ -29,7 +30,7 @@ class ReactHls extends React.Component {
 
         let { url, autoplay, hlsConfig, controls } = this.props;
         let { playerId } = this.state;
-        let $video = document.getElementById(`react-hls-${playerId}`);
+        let $video = ReactDOM.findDOMNode(this.refs.video);
         let hls = new Hls(hlsConfig);
 
         hls.loadSource(url);
@@ -45,11 +46,16 @@ class ReactHls extends React.Component {
 
     render () {
         let { playerId } = this.state;
-        let { controls } = this.props;
+        let { controls, width, height } = this.props;
 
         return (
             <div key={playerId} className="player-area">
-                <video className="hls-player" id={`react-hls-${playerId}`} controls={controls}></video>
+                <video ref="video"
+                       className="hls-player"
+                       id={`react-hls-${playerId}`}
+                       controls={controls}
+                       width={width}
+                       height={height}></video>
             </div>
         )
     }
@@ -59,13 +65,17 @@ ReactHls.propTypes = {
     url : PropTypes.string.isRequired,
     autoplay : PropTypes.bool,
     hlsConfig : PropTypes.object, //https://github.com/dailymotion/hls.js/blob/master/API.md#fine-tuning
-    controls : PropTypes.bool
+    controls : PropTypes.bool,
+    width : PropTypes.number,
+    height : PropTypes.number
 }
 
 ReactHls.defaultProps = {
-    autoplay : true,
+    autoplay : false,
     hlsConfig : {},
-    controls : true
+    controls : true,
+    width : 500,
+    height : 375
 }
 
 export default ReactHls;
