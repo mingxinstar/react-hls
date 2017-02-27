@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const commonConfig = require('./webpack.common.config');
 
 module.exports = Object.assign(commonConfig, {
+    devtool : 'cheap-module-source-map',
     plugins : [
         new webpack.DefinePlugin({
             'process.env': {

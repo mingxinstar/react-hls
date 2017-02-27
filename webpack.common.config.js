@@ -24,31 +24,31 @@ module.export = {
         }
     },
     module : {
-        preLoaders : [{
-            test : /\.js|jsx$/,
-            loader : 'eslint-loader',
-            configFile : '.eslintrc.js',
-            exclude : [
-                '/node_modules'
-            ]
-        }],
-        loaders : [{
+        rules : [{
             test : /\.css$/,
-            loader : 'style-loader!css-loader'
+            use : ['style-loader', 'css-loader'],
+            include : [publicDir]
         }, {
             test : /\.scss$/,
-            loader : 'style-loader!css-loader!sass-loader'
+            use : ['style-loader', 'css-loader', 'sass-loader'],
+            include : [publicDir]
         }, {
             test : /\.js|jsx$/,
-            loader : 'babel-loader',
-            exclude : /node_modules/
+            loader : 'eslint-loader',
+            include : [publicDir],
+            enforce : 'post'
+        }, {
+            test : /\.js|jsx$/,
+            use : 'babel-loader',
+            include : [publicDir]
         }, {
             test : /\.eot|woff|woff2|ttf|svg$/,
-            loader : 'file-loader',
-            exclude : /node_modules/
+            use : 'file-loader',
+            include : [publicDir]
         }, {
             test : /\.jpg|png|gif$/,
-            loader : 'url-loader?limit=25000'
+            use : 'url-loader?limit=25000',
+            include : [publicDir]
         }]
     },
 }
