@@ -10,7 +10,17 @@ module.exports = {
     },
     output : {
         path : __dirname + '/dist/assets',
-        filename : '[name].bundle.js'
+        filename : '[name].bundle.js',
+        library : 'react-hls',
+        libraryTarget : 'umd'
+    },
+    externals : {
+        'react' : {
+            commonjs : 'react',
+            commonjs2 : 'react',
+            amd : 'react',
+            root : 'react'
+        }
     },
     resolve : {
         modules : ['node_modules', srcDir],
