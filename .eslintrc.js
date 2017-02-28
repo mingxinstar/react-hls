@@ -17,7 +17,7 @@ module.exports = {
         es6 : true
     },
     rules : {
-        "no-console" : 0
+        "no-console" : 1,
+        "no-unused-vars" : 1
     }
-
 }

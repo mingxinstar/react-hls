@@ -1,7 +1,6 @@
 'use strict';
 
 import React, { PropTypes } from 'react';
-import ReactDOM from 'react-dom';
 import Hls from 'hls.js';
 
 class ReactHls extends React.Component {
@@ -14,8 +13,6 @@ class ReactHls extends React.Component {
     }
 
     componentDidUpdate () {
-        console.log('componentDidUpdate');
-
         this._initPlayer();
     }
 
@@ -28,9 +25,8 @@ class ReactHls extends React.Component {
             this.hls.destroy();
         }
 
-        let { url, autoplay, hlsConfig, controls } = this.props;
-        let { playerId } = this.state;
-        let $video = ReactDOM.findDOMNode(this.refs.video);
+        let { url, autoplay, hlsConfig } = this.props;
+        let { video : $video } = this.refs;
         let hls = new Hls(hlsConfig);
 
         hls.loadSource(url);

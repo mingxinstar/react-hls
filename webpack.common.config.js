@@ -1,54 +1,55 @@
 'use strict';
 
-const publicDir = `${__dirname}/src`;
+const path = require('path');
+const srcDir = path.resolve(__dirname, 'src');
 
-module.export = {
+module.exports = {
     entry : {
-        index : './src/scripts/index.js'
+        index : './src/scripts/index.js',
+        player : './src/scripts/components/react-hls.jsx'
     },
     output : {
         path : __dirname + '/dist/assets',
-        publicPath : '/assets/',
         filename : '[name].bundle.js'
     },
     resolve : {
-        root : publicDir,
-        extensions: ['', '.js', '.jsx'],
+        modules : ['node_modules', srcDir],
+        extensions: ['.js', '.jsx', '.sass'],
         alias : {
-            scripts : `${publicDir}/scripts`,
-            styles : `${publicDir}/styles`,
-            components : `${publicDir}/scripts/components`,
-            config : `${publicDir}/scripts/config`,
-            images : `${publicDir}/styles/images`,
-            node_modules : `${publicDir}/../node_modules`
+            scripts : `${srcDir}/scripts`,
+            styles : `${srcDir}/styles`,
+            components : `${srcDir}/scripts/components`,
+            config : `${srcDir}/scripts/config`,
+            images : `${srcDir}/styles/images`,
+            node_modules : `${srcDir}/../node_modules`
         }
     },
     module : {
         rules : [{
             test : /\.css$/,
             use : ['style-loader', 'css-loader'],
-            include : [publicDir]
+            include : [srcDir]
         }, {
             test : /\.scss$/,
             use : ['style-loader', 'css-loader', 'sass-loader'],
-            include : [publicDir]
+            include : [srcDir]
         }, {
             test : /\.js|jsx$/,
             loader : 'eslint-loader',
-            include : [publicDir],
+            include : [srcDir],
             enforce : 'post'
         }, {
             test : /\.js|jsx$/,
             use : 'babel-loader',
-            include : [publicDir]
+            include : [srcDir]
         }, {
             test : /\.eot|woff|woff2|ttf|svg$/,
             use : 'file-loader',
-            include : [publicDir]
+            include : [srcDir]
         }, {
             test : /\.jpg|png|gif$/,
             use : 'url-loader?limit=25000',
-            include : [publicDir]
+            include : [srcDir]
         }]
     },
 }

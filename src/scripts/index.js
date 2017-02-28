@@ -22,16 +22,12 @@ class Index extends React.Component {
     }
 
     _handleInputBlur (e) {
-        console.log(e.target.value);
-
         this.setState({
             hlsUrl : e.target.value
         });
     }
 
     _handleEnter (e) {
-        console.log(e.keyCode);
-
         if (e.keyCode === 13) {
             this.setState({
                 hlsUrl : e.target.value
@@ -41,8 +37,6 @@ class Index extends React.Component {
 
     render () {
         let { hlsUrl } = this.state;
-
-        console.log('render');
 
         return (
             <div>
