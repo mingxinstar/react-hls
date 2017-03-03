@@ -4,6 +4,14 @@ const commonConfig = require('./webpack.common.config');
 
 module.exports = Object.assign(commonConfig, {
     devtool : 'cheap-module-source-map',
+    externals : {
+        'react' : {
+            commonjs : 'react',
+            commonjs2 : 'react',
+            amd : 'react',
+            root : 'react'
+        }
+    },
     plugins : [
         new webpack.DefinePlugin({
             'process.env': {

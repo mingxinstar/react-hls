@@ -14,14 +14,6 @@ module.exports = {
         library : 'react-hls',
         libraryTarget : 'umd'
     },
-    externals : {
-        'react' : {
-            commonjs : 'react',
-            commonjs2 : 'react',
-            amd : 'react',
-            root : 'react'
-        }
-    },
     resolve : {
         modules : ['node_modules', srcDir],
         extensions: ['.js', '.jsx', '.sass'],
