@@ -21,7 +21,6 @@ module.exports = Object.assign(commonConfig, {
         }),
         new webpack.optimize.AggressiveMergingPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.DedupePlugin(),
         new webpack.optimize.UglifyJsPlugin({
             mangle: true,
             compress: {
@@ -35,7 +34,6 @@ module.exports = Object.assign(commonConfig, {
                 comments: false,
             },
             exclude: [/\.min\.js$/gi] // skip pre-minified libs
-        }),
-        new webpack.IgnorePlugin(/^\.\/locale$/, [/moment$/]),
+        })
     ]
 })
