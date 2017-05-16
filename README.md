@@ -17,7 +17,7 @@ It will use [hls.js](https://github.com/dailymotion/hls.js) to play your hls liv
 import ReactHLS from 'react-hls';
 
 // In your render function
-<ReactHLS url={"you hls http url"} />
+<ReactHLS url={"your hls http url"} />
 ```
 
 
