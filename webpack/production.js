@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 
-const commonConfig = require('./webpack.common.config');
+const commonConfig = require('./common');
 
 module.exports = Object.assign(commonConfig, {
     devtool : 'cheap-module-source-map',

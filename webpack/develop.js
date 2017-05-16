@@ -1,13 +1,15 @@
 'use strict';
 
-const commonConfig = require('./webpack.common.config');
+const path = require('path');
+
+const commonConfig = require('./common');
 
 module.exports = Object.assign(commonConfig, {
     devtool : 'eval',
     devServer : {
         hot : true,
         port : 8030,
-        contentBase : __dirname + '/dist',
+        contentBase : path.resolve(__dirname, '../dist'),
         publicPath : '/assets/',
     }
 })

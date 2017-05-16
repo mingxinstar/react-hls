@@ -4,9 +4,9 @@
   "description": "simple react component for playing hls/rtmp live stream",
   "main": "./dist/assets/player.bundle.js",
   "scripts": {
-    "start": "cp src/index.html dist/ && webpack-dev-server --inline --hot",
-    "build": "webpack",
-    "build:production": "webpack --config webpack.production.config.js",
+    "start": "cp src/index.html dist/ && webpack-dev-server --inline --hot --config webpack/develop.js",
+    "build": "webpack --config webpack/develop.js",
+    "build:production": "webpack --config webpack/production.js",
     "release" : "npm run build:production && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

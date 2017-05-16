@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const srcDir = path.resolve(__dirname, 'src');
+const srcDir = path.resolve(__dirname, '../src');
 
 module.exports = {
     entry : {
@@ -9,7 +9,7 @@ module.exports = {
         player : './src/scripts/components/react-hls.jsx'
     },
     output : {
-        path : __dirname + '/dist/assets',
+        path : path.resolve(__dirname, '../dist/assets'),
         filename : '[name].bundle.js',
         library : 'react-hls',
         libraryTarget : 'umd'
