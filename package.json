@@ -1,6 +1,6 @@
 {
   "name": "react-hls",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "simple react component for playing hls/rtmp live stream",
   "main": "./dist/assets/player.bundle.js",
   "scripts": {
