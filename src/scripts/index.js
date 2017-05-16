@@ -13,8 +13,13 @@ class Index extends React.Component {
         super(props);
 
         this.state = {
-            hlsUrl : 'http://www.streambox.fr/playlists/x36xhzz/x36xhzz.m3u8'
-        }
+            hlsUrl : 'http://www.streambox.fr/playlists/x36xhzz/x36xhzz.m3u8',
+            destroy : false
+        };
+
+        this._handleInputBlur = this._handleInputBlur.bind(this);
+        this._handleEnter = this._handleEnter.bind(this);
+        this._handleDestroyClick = this._handleDestroyClick.bind(this);
     }
 
     shouldComponentUpdate (nextProps, nextState) {
@@ -35,8 +40,14 @@ class Index extends React.Component {
         }
     }
 
+    _handleDestroyClick () {
+        this.setState({
+            destroy : true
+        })
+    }
+
     render () {
-        let { hlsUrl } = this.state;
+        let { hlsUrl, destroy } = this.state;
 
         return (
             <div>
@@ -44,10 +55,13 @@ class Index extends React.Component {
                     <label>hsl url : </label>
                     <input type="text"
                            defaultValue={hlsUrl}
-                           onBlur={this._handleInputBlur.bind(this)}
-                           onKeyUp={this._handleEnter.bind(this)}/>
+                           onBlur={this._handleInputBlur}
+                           onKeyUp={this._handleEnter}/>
                 </div>
-                <Player url={hlsUrl} />
+                {!destroy ? <Player url={hlsUrl} /> : null}
+                <br />
+                <button className="destroy-btn"
+                        onClick={this._handleDestroyClick}>Destroy Video</button>
             </div>
         )
     }

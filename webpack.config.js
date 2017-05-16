@@ -6,7 +6,7 @@ module.exports = Object.assign(commonConfig, {
     devtool : 'eval',
     devServer : {
         hot : true,
-        port : 8020,
+        port : 8030,
         contentBase : __dirname + '/dist',
         publicPath : '/assets/',
     }

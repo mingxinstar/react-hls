@@ -10,6 +10,8 @@ class ReactHls extends React.Component {
         this.state = {
             playerId : Date.now()
         };
+
+        this.hls = null;
     }
 
     componentDidUpdate () {
@@ -18,6 +20,14 @@ class ReactHls extends React.Component {
 
     componentDidMount () {
         this._initPlayer();
+    }
+
+    componentWillUnmount () {
+        let { hls } = this;
+
+        if (hls) {
+            hls.destroy();
+        }
     }
 
     _initPlayer () {
