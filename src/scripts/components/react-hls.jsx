@@ -53,7 +53,7 @@ class ReactHls extends React.Component {
 
     render () {
         let { playerId } = this.state;
-        let { controls, width, height } = this.props;
+        let { controls, width, height, poster } = this.props;
 
         return (
             <div key={playerId} className="player-area">
