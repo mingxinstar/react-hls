@@ -62,7 +62,8 @@ class ReactHls extends React.Component {
                        id={`react-hls-${playerId}`}
                        controls={controls}
                        width={width}
-                       height={height}></video>
+                       height={height}
+                       poster={poster}></video>
             </div>
         )
     }
@@ -74,7 +75,8 @@ ReactHls.propTypes = {
     hlsConfig : PropTypes.object, //https://github.com/dailymotion/hls.js/blob/master/API.md#fine-tuning
     controls : PropTypes.bool,
     width : PropTypes.number,
-    height : PropTypes.number
+    height : PropTypes.number,
+    poster : PropTypes.string
 }
 
 ReactHls.defaultProps = {
