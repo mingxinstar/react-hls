@@ -53,7 +53,7 @@ class ReactHls extends React.Component {
 
     render () {
         let { playerId } = this.state;
-        let { controls, width, height, poster } = this.props;
+        const { controls, width, height, poster, videoProps } = this.props;
 
         return (
             <div key={playerId} className="player-area">
@@ -63,7 +63,8 @@ class ReactHls extends React.Component {
                        controls={controls}
                        width={width}
                        height={height}
-                       poster={poster}></video>
+                       poster={poster}
+                       {...videoProps}></video>
             </div>
         )
     }
@@ -76,7 +77,8 @@ ReactHls.propTypes = {
     controls : PropTypes.bool,
     width : PropTypes.number,
     height : PropTypes.number,
-    poster : PropTypes.string
+    poster : PropTypes.string,
+    videoProps : PropTypes.object
 }
 
 ReactHls.defaultProps = {

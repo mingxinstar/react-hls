@@ -6,6 +6,7 @@
   "scripts": {
     "start": "cp src/index.html dist/ && webpack-dev-server --inline --hot --config webpack/develop.js",
     "build": "webpack --config webpack/develop.js",
+    "build:lib": "babel src --out-dir lib",
     "build:production": "webpack --config webpack/production.js",
     "release": "npm run build:production && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,7 +27,9 @@
   },
   "homepage": "https://github.com/mingxinstar/react-hls#readme",
   "dependencies": {
-    "hls.js": "^0.6.14",
+    "hls.js": "^0.6.14"
+  },
+  "peerDependencies": {
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
@@ -43,7 +46,7 @@
     "eslint-loader": "^1.6.1",
     "eslint-plugin-react": "^6.9.0",
     "file-loader": "^0.9.0",
-    "node-sass": "^4.2.0",
+    "node-sass": "^4.7.2",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",

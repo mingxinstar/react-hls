@@ -46,3 +46,7 @@ import ReactHLS from 'react-hls';
 - hlsConfig `Object`
 
     `hls.js` config , you can see all config [here](https://github.com/dailymotion/hls.js/blob/master/doc/API.md#fine-tuning)
+
+- videoProps `Object`
+
+    All video tag attributes supported. You can check [all attributes here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)
