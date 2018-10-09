@@ -45,7 +45,7 @@ import ReactHLS from 'react-hls';
 
 - hlsConfig `Object`
 
-    `hls.js` config , you can see all config [here](https://github.com/dailymotion/hls.js/blob/master/doc/API.md#fine-tuning)
+    `hls.js` config , you can see all config [here](https://github.com/video-dev/hls.js/blob/master/docs/API.md#fine-tuning)
 
 - videoProps `Object`
 
