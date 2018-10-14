@@ -11,12 +11,12 @@ class ReactHls extends React.Component {
         this.state = {
             playerId : Date.now()
         };
-        this.disableInitOnUpdate = props.disableInitOnUpdate;
+
         this.hls = null;
     }
 
     componentDidUpdate () {
-        if (!this.disableInitOnUpdate) this._initPlayer();
+        if (!this.props.disableInitOnUpdate) this._initPlayer();
     }
 
     componentDidMount () {
