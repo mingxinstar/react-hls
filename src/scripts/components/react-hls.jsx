@@ -16,7 +16,7 @@ class ReactHls extends React.Component {
     }
 
     componentDidUpdate () {
-        this._initPlayer();
+        if (!this.props.disableInitOnUpdate) this._initPlayer();
     }
 
     componentDidMount () {
