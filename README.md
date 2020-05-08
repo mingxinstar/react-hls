@@ -31,7 +31,7 @@ import ReactHLS from 'react-hls';
 
     autoplay when component is ready default to `false`
 
-- constrols `Boolean`
+- controls `Boolean`
 
     whether or not showing the playback controls default to `false`
 
